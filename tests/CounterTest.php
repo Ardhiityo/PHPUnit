@@ -28,23 +28,17 @@ class CounterTest extends TestCase
         $this->counter = new Counter();
     }
 
-    #[After()]
-    public function after()
-    {
-        echo 'Test Completed';
-    }
+    // #[After()]
+    // public function after()
+    // {
+    //     echo 'Test Completed';
+    // }
 
     public function testIncrement()
     {
         $this->counter->increment();
 
         self::assertEquals(1, $this->counter->getCount());
-    }
-
-    #[Test]
-    public function example()
-    {
-        self::assertTrue(true);
     }
 
     #[Test]
@@ -88,5 +82,11 @@ class CounterTest extends TestCase
     public function provideWith(array $numbers, int $expectedSum)
     {
         self::assertEquals($expectedSum, Math::sum($numbers));
+    }
+
+    #[Test]
+    public function example()
+    {
+        self::markTestIncomplete('TODO : Implement this test');
     }
 }
