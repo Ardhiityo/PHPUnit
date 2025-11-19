@@ -25,4 +25,14 @@ class PersonTest extends TestCase
 
         self::assertEquals('Hello Arya', $person->sayHello(null));
     }
+
+    #[Test]
+    public function outputString()
+    {
+        $person = new Person();
+
+        $person->sayGoodBye('eko');
+
+        self::expectOutputString('Goodbye eko');
+    }
 }

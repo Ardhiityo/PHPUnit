@@ -14,4 +14,9 @@ class Person
 
         return "Hello $name";
     }
+
+    public function sayGoodBye(string $name)
+    {
+        echo "Goodbye $name";
+    }
 }
