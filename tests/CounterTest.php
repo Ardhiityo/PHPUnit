@@ -4,6 +4,7 @@ namespace Aryaadhiprasetyo\Phpunittest;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\Test;
+use PHPUnit\Framework\Attributes\TestWith;
 use PHPUnit\Framework\Attributes\Depends;
 use Aryaadhiprasetyo\Phpunittest\Counter;
 use PHPUnit\Framework\Attributes\After;
@@ -80,5 +81,12 @@ class CounterTest extends TestCase
             // [[-1, 1, 0], 0],
             // [[5, 10, 15], 30],
         ];
+    }
+
+    #[Test]
+    #[TestWith([[1, 2, 3], 6])]
+    public function provideWith(array $numbers, int $expectedSum)
+    {
+        self::assertEquals($expectedSum, Math::sum($numbers));
     }
 }
