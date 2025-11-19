@@ -3,6 +3,8 @@
 namespace Aryaadhiprasetyo\Phpunittest;
 
 use Exception;
+use PHPUnit\Framework\Attributes\RequiresOperatingSystem;
+use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 
@@ -34,5 +36,19 @@ class PersonTest extends TestCase
         $person->sayGoodBye('eko');
 
         self::expectOutputString('Goodbye eko');
+    }
+
+    #[Test]
+    public function example()
+    {
+        self::markTestSkipped('This test is skipped for demonstration purposes.');
+    }
+
+    #[Test]
+    #[RequiresPhp('8.4')]
+    #[RequiresOperatingSystem('Linux')]
+    public function exampleRequire()
+    {
+        self::assertTrue(true);
     }
 }
