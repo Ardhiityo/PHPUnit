@@ -1,0 +1,24 @@
+{
+    "name": "aryaadhiprasetyo/phpunittest",
+    "description": "Belajar PHP Unit Test dengan PHPUnit",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^12.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aryaadhiprasetyo\\Phpunittest\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aryaadhiprasetyo\\Phpunittest\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "arya"
+        }
+    ],
+    "require": {}
+}
