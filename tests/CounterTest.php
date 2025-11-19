@@ -6,17 +6,38 @@ use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\Attributes\Depends;
 use Aryaadhiprasetyo\Phpunittest\Counter;
+use PHPUnit\Framework\Attributes\After;
+use PHPUnit\Framework\Attributes\Before;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 class CounterTest extends TestCase
 {
+    private Counter $counter;
+
+    // protected function setUp(): void
+    // {
+    //     parent::setUp();
+
+    //     $this->counter = new Counter();
+    // }
+
+    #[Before()]
+    public function createCounter(): void
+    {
+        $this->counter = new Counter();
+    }
+
+    #[After()]
+    public function after()
+    {
+        echo 'Test Completed';
+    }
+
     public function testIncrement()
     {
-        $counter = new Counter();
+        $this->counter->increment();
 
-        $counter->increment();
-
-        self::assertEquals(1, $counter->getCount());
+        self::assertEquals(1, $this->counter->getCount());
     }
 
     #[Test]
@@ -28,13 +49,11 @@ class CounterTest extends TestCase
     #[Test]
     public function first()
     {
-        $counter = new Counter();
+        $this->counter->increment();
 
-        $counter->increment();
+        self::assertEquals(1, $this->counter->getCount());
 
-        self::assertEquals(1, $counter->getCount());
-
-        return $counter;
+        return $this->counter;
     }
 
     #[Test]
