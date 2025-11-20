@@ -74,6 +74,7 @@ class ProductServiceTest extends TestCase
 
         $this->productRepository->method('findById')->willReturn(null);
         $this->productRepository->method('save')->willReturn($product);
+        // $this->productRepository->method('save')->willReturnArgument(0);
 
         $result = $this->productService->register($product);
 
