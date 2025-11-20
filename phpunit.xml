@@ -1,7 +1,14 @@
 <phpunit colors="true" verbose="true">
     <testsuites>
-        <testsuite name="My Test Suite">
+        <testsuite name="all">
             <directory>tests</directory>
+        </testsuite>
+        <testsuite name="product">
+            <file>tests/ProductServiceTest.php</file>
+            <file>tests/ProductServiceMockTest.php</file>
+        </testsuite>
+        <testsuite name="counter">
+            <file>tests/CounterTest.php</file>
         </testsuite>
     </testsuites>
 </phpunit>
