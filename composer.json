@@ -20,5 +20,8 @@
             "name": "arya"
         }
     ],
-    "require": {}
+    "require": {},
+    "scripts": {
+        "test": "phpunit --configuration phpunit.xml"
+    }
 }
